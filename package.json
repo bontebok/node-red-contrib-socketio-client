@@ -20,12 +20,12 @@
     "url": "https://github.com/isaacvitor/node-red-contrib-socketio-client/issues"
   },
   "homepage": "https://github.com/isaacvitor/node-red-contrib-socketio-client.git#readme",
-  "dependencies": {
-    "socket.io-client": "^2.3.0"
-  },
   "node-red": {
     "nodes": {
       "socketio-client": "socketio-client/socketio-client.js"
     }
+  },
+  "dependencies": {
+    "socket.io-client": "^4.5.0"
   }
 }

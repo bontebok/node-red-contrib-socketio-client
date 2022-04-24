@@ -5,23 +5,10 @@
     RED.nodes.registerType('socketio-config', {
       category: 'config',
       defaults: {
-        host: {
-          value: "http://localhost",
-          required: true
-        },
-        port: {
-          value: "",
-          required: false,
-          validate: RED.validators.number()
-        },
-        path: {
-          value: "",
-          required: false
-        },
-        reconnection: {
-          value: true,
-          required: false
-        }
+        host: { value: "http://localhost", required: true },
+        port: { value: "", required: false, validate: RED.validators.number() },
+        path: { value: "", required: false },
+        reconnection: { value: true, required: false }
       },
       label: function() {
         return this.host + ":" + this.port + this.path;
@@ -55,19 +42,9 @@
       icon: "socketio.png",
       paletteLabel: "socketio connector",
       defaults: {
-        server: {
-          value: "",
-          type: "socketio-config"
-        },
-        namespace: {
-          value: "",
-          required: false
-        },
-        name: {
-          value: "",
-          validate: RED.validators.regex(/[a-zA-Z0-9_]+/),
-          required: true
-        }
+        server: { value: "", type: "socketio-config" },
+        namespace: { value: "", required: false },
+        name: { value: "", validate: RED.validators.regex(/[a-zA-Z0-9_]+/), required: true }
       },
       label: function() {
           return this.name || "Socket.IO Connector";
@@ -110,13 +87,8 @@
       icon: "socketio.png",
       paletteLabel: "socketio listener",
       defaults: {
-        eventname: {
-          value: "",
-          required: true
-        },
-        name: {
-          value: ""
-        }
+        eventname: { value: "", required: true },
+        name: { value: "" }
       },
       label: function() {
           return ( this.name || this.eventname ) || "Socket.IO listener";
@@ -153,9 +125,7 @@
       icon: "socketio.png",
       paletteLabel: "socketio emitter",
       defaults: {
-        name: {
-          value: ""
-        }
+        name: { value: "" }
       },
       label: function() {
           return ( this.name ) || "Socket.IO emitter";
@@ -184,4 +154,3 @@
         }
       </pre>
   </script>
-
