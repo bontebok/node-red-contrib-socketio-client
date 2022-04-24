@@ -22,7 +22,7 @@
   "homepage": "https://github.com/isaacvitor/node-red-contrib-socketio-client.git#readme",
   "node-red": {
     "nodes": {
-      "socketio-client": "socketio-client/socketio-client.js"
+      "socketio-client": "socketio-client.js"
     }
   },
   "dependencies": {
