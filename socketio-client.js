@@ -211,11 +211,12 @@ function SocketIOEvents(n) {
     socket.on(val, function(...msgin) {
       var msg = {};
       if ((msgin.length > 0) && (typeof(msgin[msgin.length - 1]) === 'function')) {
-          RED.util.setMessageProperty(msg, "callback", msgin[msgin.length - 1], true);
-          RED.util.setMessageProperty(msg, "payload", msgin.slice(0,-1), true);
+        let msginnew = msgin.slice(0,-1);
+        RED.util.setMessageProperty(msg, "callback", msgin[msgin.length - 1], true);
+        RED.util.setMessageProperty(msg, "payload", (msginnew.length == 1) ? msginnew[0] : msginnew, true);
       }
       else
-        RED.util.setMessageProperty(msg, "payload", msgin, true);
+        RED.util.setMessageProperty(msg, "payload", (msgin.length == 1) ? msgin[0] : msgin, true);
 
       RED.util.setMessageProperty(msg, "socketIOEvent", val, true);
       RED.util.setMessageProperty(msg, "socketIOId", socket.id, true);
