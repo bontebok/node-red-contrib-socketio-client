@@ -96,12 +96,10 @@ function SocketIOEvents(n) {
   });
 
   node.managerEvents.forEach(function(val, i) {
-    node.log("Manager Events");
     addListener(node, sockets[n.server].io, val, i);
   });
 
   node.socketEvents.forEach(function(val, i) {
-    node.log("Socket Events");
     addListener(node, sockets[n.server], val, i);
   });
 }
