@@ -128,9 +128,10 @@ function SocketIOEvents(n) {
 
     sockets[n.server].on("connect", () => {
       node.status({ fill: 'green', shape: 'dot', text: 'connected' });
-      node.rules.forEach( (val,i) => {
-        addListener(node, sockets[n.server], val.v, i);
-      });
+    });
+
+    node.rules.forEach( (val,i) => {
+      addListener(node, sockets[n.server], val.v, i);
     });
 
 /*
